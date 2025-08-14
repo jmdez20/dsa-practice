@@ -7,4 +7,4 @@ const firstDuplicate = (arr) => {
         seen.add(arr[i]);
     }
     return -1;
-};few 
+}; 
