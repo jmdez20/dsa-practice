@@ -12,5 +12,7 @@ const firstDuplicate = (arr) => {
 // I found a way to make this a lot shorter, into a one-liner. Check below ⬇️
 
 function containsDuplicate(nums) {
-    return new Set(nums).size !== nums.length; 
+    return new Set(nums).size !== nums.length; //if the size of Set does not equal nums.length, then it contains a duplicate
 };
+
+/// myy udnerstanding of it
