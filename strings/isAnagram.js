@@ -24,3 +24,14 @@ function isNewAnagram(word1, word2) {
         return false;
     }
 };
+
+// A cleaner version of the larger function above. In between a one liner and a fully laid out solution
+
+function isNewerAnagram(a, b) {
+    if (a.length !== b.length) return false;
+    
+    const sortedA = a.split('').sort().join('')
+    const sortedB = b.split('').sort().join('')
+
+    return sortedA === sortedB;
+}
