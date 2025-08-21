@@ -15,3 +15,12 @@ function isPalindrome(s) {
     return true;
 }
 
+// or you can make this mmore simplified. Here's how: 
+
+function isPalindrome(s) {
+    const cleanedString = s.toLowerCase().replace(/[^a-z0-9]/g, '')
+
+    const reversedString = cleanedString.split('').reverse().join('')
+
+    return cleanedString === reversedString;
+}
