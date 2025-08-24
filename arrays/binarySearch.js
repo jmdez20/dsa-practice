@@ -1,20 +1,18 @@
-function maxProfit(prices) {
-    if (!prices || prices.length === 0) return false;
+function binarySearch(srtdArr, target) {
+    let left = 0; 
+    let right = srtdArr.length -1; 
 
-    let cheapest_price_so_far = prices[0];
-    let maxProfit = 0
+    while (left <= right) {
+        let middle = Math.floor((left+right) / 2);
+        let middleValue = srtdArr[middle];
 
-    for (let i = 1; i < prices.length; i++) {
-        let currentPrice = prices[i]; 
-
-        if (currentPrice < cheapest_price_so_far) {
-            cheapest_price_so_far = currentPrice;
+        if (middleValue === target) {
+            return middle;
+        } else if (middleValue < target) {
+            left = middle + 1;
         } else {
-            let potentialProfit = currentPrice - cheapest_price_so_far;
-            if (potentialProfit > maxProfit) {
-                maxProfit = potentialProfit
-            }
+            right = middle - 1; 
         }
     }
-    return maxProfit;
+    return -1;
 }
